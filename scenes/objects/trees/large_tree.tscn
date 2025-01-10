@@ -1,0 +1,51 @@
+[gd_scene load_steps=11 format=3 uid="uid://lnldohpos8jb"]
+
+[ext_resource type="Texture2D" uid="uid://cdd84ghg0lo1l" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_hsb8x"]
+[ext_resource type="Script" path="res://scenes/objects/trees/large_tree.gd" id="2_2j73j"]
+[ext_resource type="PackedScene" uid="uid://doy60o4eke5lm" path="res://scenes/components/hurt_component.tscn" id="2_njmr6"]
+[ext_resource type="PackedScene" uid="uid://1j0vyhy1b0bk" path="res://scenes/components/damage_component.tscn" id="3_uwocw"]
+[ext_resource type="Shader" path="res://scenes/objects/shake.gdshader" id="5_e7fbp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e3j47"]
+resource_local_to_scene = true
+shader = ExtResource("5_e7fbp")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtyhg"]
+atlas = ExtResource("1_hsb8x")
+region = Rect2(16, 0, 32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_03xaa"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrxg4"]
+size = Vector2(18, 23)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w44dr"]
+shader = ExtResource("5_e7fbp")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[node name="LargeTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_e3j47")
+position = Vector2(0, -12)
+texture = SubResource("AtlasTexture_vtyhg")
+script = ExtResource("2_2j73j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 11)
+shape = SubResource("CircleShape2D_03xaa")
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_njmr6")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_xrxg4")
+debug_color = Color(0.908577, 0.235187, 0.476617, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_uwocw")]
+material = SubResource("ShaderMaterial_w44dr")
+max_damage = 6
