@@ -5,8 +5,8 @@
 
 ## Credits
 
-1. Tutorial taught by RapidVector: (https://youtu.be/it0lsREGdmc?si=b0OLj8w5Y_8tn-SN)
-2. Game Assets by cupnoodle: (https://cupnooble.itch.io/sprout-lands-asset-pack)
+1. Tutorial taught by RapidVector - (https://youtu.be/it0lsREGdmc?si=b0OLj8w5Y_8tn-SN)
+2. Game Assets by cupnoodle - (https://cupnooble.itch.io/sprout-lands-asset-pack)
 
 
 ## Badges
