@@ -3,8 +3,9 @@
 [ext_resource type="Script" path="res://scenes/components/day_night_cycle_component.gd" id="1_q5rco"]
 
 [sub_resource type="Gradient" id="Gradient_1si5s"]
-offsets = PackedFloat32Array(0, 0.0982143, 0.194196, 0.299107, 0.392857, 0.517857, 0.678571, 1)
-colors = PackedColorArray(0, 0.2, 0.4, 1, 0.292782, 0.345683, 0.92861, 1, 0.529412, 0.807843, 0.921569, 1, 1, 1, 1, 1, 1, 0.843137, 0, 1, 1, 0.270588, 0, 1, 0.294118, 0, 0.509804, 1, 0, 0.2, 0.4, 1)
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0.552272, 0.658813, 0.772434, 1, 0.777599, 0.836311, 0.899733, 1, 0.892064, 0.940104, 0.999998, 1)
+metadata/_snap_enabled = true
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2dk1q"]
 gradient = SubResource("Gradient_1si5s")

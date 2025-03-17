@@ -29,20 +29,21 @@ shader_parameter/shake_speed = 20.0
 
 [node name="LargeTree" type="Sprite2D"]
 material = SubResource("ShaderMaterial_e3j47")
-position = Vector2(0, -12)
+position = Vector2(0, -4)
 texture = SubResource("AtlasTexture_vtyhg")
+offset = Vector2(0, -8)
 script = ExtResource("2_2j73j")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 11)
+position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_03xaa")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_njmr6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
-position = Vector2(0, 2.5)
+position = Vector2(0, -9.5)
 shape = SubResource("RectangleShape2D_xrxg4")
 debug_color = Color(0.908577, 0.235187, 0.476617, 0.42)
 
