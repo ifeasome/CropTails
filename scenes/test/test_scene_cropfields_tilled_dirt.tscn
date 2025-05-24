@@ -24,11 +24,14 @@ tile_map_data = PackedByteArray("AAAEAAUABAAAAAEAAAAEAAYABAAAAAEAAAAEAAcABAAAAAE
 tile_set = ExtResource("2_1whwn")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("2_1whwn")
 
 [node name="CropFields" type="Node2D" parent="."]
 
-[node name="FieldCursorComponent" parent="." instance=ExtResource("3_vkedh")]
+[node name="FieldCursorComponent" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("3_vkedh")]
 script = ExtResource("4_baafe")
+grass_tilemap_layer = NodePath("../GameTileMap/Grass")
+tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledSoil")
 
 [node name="Player" parent="." instance=ExtResource("3_76v1h")]
 position = Vector2(196, 186)
